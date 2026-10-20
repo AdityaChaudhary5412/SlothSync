@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SlothSync 🦥 | Slow & Steady AI File Tidier</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="logo-group">
+        <span class="logo-emoji">🦥</span>
+        <div>
+          <h1>SlothSync</h1>
+          <p class="subtitle">Autonomous Anti-Dread File Organizer & Sync Engine</p>
+        </div>
+      </div>
+      <div class="engine-badge" id="engineBadge">
+        <span class="status-dot"></span>
+        <span id="engineName">Checking AI Status...</span>
+      </div>
+    </header>
+
+    <!-- Sloth Hero Banner -->
+    <div class="sloth-banner">
+      <div class="banner-text">
+        <h2>"Why do today what open-weight AI can do for you?"</h2>
+        <p>Built for <strong>Hacktoberfest 2026 Week 3: Slow and Steady</strong>. SlothSync quietly scans your messy folders, deduplicates identical files, semantically categorizes clutter with <strong>Gemma 2B</strong>, and backs them up safely with 1-click instant rollback.</p>
+      </div>
+      <div class="sloth-mascot">💤</div>
+    </div>
+
+    <!-- Quick Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Estimated Time Saved</div>
+        <div class="stat-value" id="statTimeSaved">0 min</div>
+        <div class="stat-sub">Zero manual dragging</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Duplicates Caught</div>
+        <div class="stat-value" id="statDuplicates">0</div>
+        <div class="stat-sub">SHA-256 deduplicated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Files Organized</div>
+        <div class="stat-value" id="statFiles">0</div>
+        <div class="stat-sub">Semantic categorizations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Dread Level</div>
+        <div class="stat-value" style="color: #4ade80;">0%</div>
+        <div class="stat-sub">100% Sloth Serenity</div>
+      </div>
+    </div>
+
+    <!-- Control Center -->
+    <div class="card control-center">
+      <h3>📁 Folder Configuration</h3>
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="sourceInput">Source Folder (Messy Clutter):</label>
+          <input type="text" id="sourceInput" value="./samples/messy_files">
+        </div>
+        <div class="input-group">
+          <label for="backupInput">Backup Destination:</label>
+          <input type="text" id="backupInput" value="./samples/backup">
+        </div>
+      </div>
+
+      <div class="button-bar">
+        <button id="btnScan" class="btn btn-primary">🔍 Scan & Analyze (Dry Run)</button>
+        <button id="btnSync" class="btn btn-accent">🦥 Sloth Sync & Organize</button>
+        <button id="btnRollback" class="btn btn-outline">⏪ 1-Click Rollback</button>
+      </div>
+    </div>
+
+    <!-- AI Summary Box -->
+    <div class="card ai-summary-card" id="aiSummaryCard" style="display: none;">
+      <div class="summary-header">
+        <h3>🧠 SlothSync AI Insights</h3>
+        <span class="badge" id="aiModelTag">Gemma 2B</span>
+      </div>
+      <p id="aiSummaryText" class="summary-text"></p>
+    </div>
+
+    <!-- Files Table -->
+    <div class="card files-card">
+      <div class="files-header">
+        <h3>Detected Items</h3>
+        <span id="fileCountBadge" class="badge">0 items</span>
+      </div>
+      <div class="table-container">
+        <table class="files-table">
+          <thead>
+            <tr>
+              <th>File Name</th>
+              <th>Category</th>
+              <th>Suggested Name</th>
+              <th>Tags</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="filesTableBody">
+            <tr>
+              <td colspan="5" class="empty-row">Click "Scan & Analyze" to let SlothSync inspect your files.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Audit Logs & Manifests -->
+    <div class="card logs-card">
+      <h3>📜 Recent Sloth Audit Logs</h3>
+      <div id="logsContainer" class="logs-container">
+        <p class="empty-text">No sync operations performed yet in this session.</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>SlothSync · Open Source AI for Hacktoberfest 2026 · Powered by Google Gemma & Python 3</p>
+      <p><a href="https://github.com/AdityaChaudhary5412/SlothSync" target="_blank">GitHub Repository</a> · 100% On-Device & Zero Cloud Data Leakage</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
